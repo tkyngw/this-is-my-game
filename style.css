@@ -1,36 +1,56 @@
-
-input {
-    border: none;   
-    border-bottom: solid darkgrey 2px;
-    font-size: 2em;
-}
-
-/* 
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-image: url(/src/beach-background.gif);
     background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Press Start 2P', cursive;
 }
-*/
+
+#system-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input {
+    border: none;  
+    background: transparent;
+    border-bottom: solid white 3px;
+    font-size: 2em;
+    margin-top: 300px;
+    outline: none;
+    text-align: center;
+}
+
+::placeholder{
+    color: white;
+    opacity: 10;
+    font-size: 0.5em;
+    text-align: center;
+    font-family: 'Press Start 2P';
+}
 
 #question {
-    font-size: 3em;
+    font-size: 2em;
     margin-top: 100px;
+    text-align: center;
+    line-height: 3em;
+    color: white;
 }
 
 #question span {
     font-weight: bold;
-    color: orange;
 }
 
 #score {
-    font-size: 2em;
-    margin: 100px 0px 100px 0px;
+    font-size: 1.5em;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .word {
     font-size: 2em;
-    margin: 10px;
-    color: red
+    color: red;
 }
