@@ -23,9 +23,16 @@ let rightAnswer
 
 let score = 0;
 
+// an array of only the danish words
+
+let wordsDanish = words.map(function(word){
+    return word.danish
+})
+// console.log(wordsDanish)
+
 // a random english word shown in the question section
 function newQuestion(){  
-        randomPair = copiedWords[Math.floor(Math.random() * (copiedWords.length))]
+        randomPair = words[Math.floor(Math.random() * (words.length))]
         //console.log('this is the new pair:' , randomPair)
         randomQuestion = randomPair.english
         rightAnswer = randomPair.danish
@@ -36,11 +43,18 @@ console.log(randomPair)
 console.log(randomQuestion)
 console.log(rightAnswer)
 
+function wordsRemoved(){
+    const removedWords = copiedWords.filter(function (word){
+        return word.danish !== rightAnswer;
+      });
+    return copiedWords = removedWords
+}
+
 // danish words shown on the screen
 function invasion(){
-    for (let i=0; i< copiedWords.length; i++){
+    for (let i=0; i< wordsDanish.length; i++){
         let newDiv = document.createElement('div')
-        let newWords = newDiv.innerText = copiedWords[i].danish
+        let newWords = newDiv.innerText = wordsDanish[i]
         document.querySelector('#words').appendChild(newDiv).classList.add('word')
     }
 }
@@ -54,12 +68,13 @@ const answerTyped = document.getElementById('answer')
 function defeat(){
     const toBeRemoved = document.getElementById('words')
     toBeRemoved.innerHTML = ''
-    const removedWords = copiedWords.filter(function (word){
-        return word.danish !== rightAnswer;
-      });
-    return copiedWords = removedWords
-
+    
+    wordsDanish.splice(wordsDanish.indexOf(rightAnswer), 1)
+    return wordsDanish
 }
+ 
+
+// user input
 
 document.addEventListener("keydown", function(event){
     if (event.key === 'Enter'){
@@ -68,6 +83,7 @@ document.addEventListener("keydown", function(event){
             document.querySelector('#score span').innerText = score
             console.log('correct')
             answerTyped.value = ''
+            
             defeat()
             newQuestion()
             invasion()
