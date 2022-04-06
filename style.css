@@ -1,56 +1,109 @@
-body {
+html {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-image: url(/src/beach-background.gif);
-    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     font-family: 'Press Start 2P', cursive;
+    background-image: url(/src/beach-background.gif);
+    background-size: cover;
 }
+
+/* article {
+    background-image: url(/visual/src/viking-ship.png);
+    background-repeat: no-repeat;
+    background-size: 15%;
+}
+*/
 
 #system-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 0;
 }
 
-input {
+#answer {
+    display: block;
+    margin: auto;
     border: none;  
     background: transparent;
     border-bottom: solid white 3px;
     font-size: 2em;
-    margin-top: 300px;
+    padding-bottom: 10px;
+    margin-top: 100px;
     outline: none;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
 }
 
 ::placeholder{
     color: white;
     opacity: 10;
-    font-size: 0.5em;
+    font-size: 0.7em;
     text-align: center;
     font-family: 'Press Start 2P';
 }
 
 #question {
-    font-size: 2em;
-    margin-top: 100px;
+    font-size: 1.8em;
+    margin-top: 60px;
     text-align: center;
-    line-height: 3em;
-    color: white;
+    line-height: 2.8em;
 }
 
 #question span {
     font-weight: bold;
+    color: red;
+    text-shadow: 3px 3px white;
 }
 
-#score {
-    font-size: 1.5em;
-    margin-top: 100px;
-    text-align: center;
+
+#words {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .word {
-    font-size: 2em;
-    color: red;
+    font-size: 1.3em;
+    color: white;
+    margin: 20px;
+    text-shadow: 2px 2px red;
+}
+
+#union-jack {
+    height: 180px;
+    position: fixed;
+    object-position: left;
+}
+
+#danish-flag{
+    width: 6%;
+    position: fixed;
+}
+
+#lang{
+    width: 2.5%;
+}
+
+
+#score {
+    font-size: 1.1em;
+    margin-top: 15px;
+    text-align: right;
+    color: white;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: white
 }

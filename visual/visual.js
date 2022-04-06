@@ -7,9 +7,9 @@ class Game {
 
     draw(){
         clear()
-        if (frameCount % 180 === 0){
-            this.obstacles.push(new Obstacle(this.shipImage))
-        }
+        // if (frameCount % 300 === 0){
+        //     this.obstacles.push(new Obstacle(this.shipImage))
+        // }
         this.obstacles.forEach(function (obstacle){
             obstacle.draw()
         })
@@ -17,7 +17,7 @@ class Game {
 
     preload(){
         this.backgroundImages = loadImage('/src/sea-land.jpeg')
-        this.shipImage = loadImage('/src/pixel-viking-ship.png')
+        this.shipImage = loadImage('/src/viking-transparent.png')
     }
 }
 
@@ -25,31 +25,17 @@ class Game {
 class Obstacle {
     constructor(image){
         this.image = image
-        this.x = (Math.random() * 1080)
+        this.x = (Math.random() * 1080) /1.2
         this.y = 0
         this.width = 150
         this.height = 150
     }
 
     draw(){
-        this.y += 0.5
+        this.y += 1
         image(this.image, this.x, this.y, this.width, this.height)
     }
 }
-
-// class Background {
-//     constructor(image){
-//         this.image = image
-//         this.x = 200
-//         this.y = 600
-//         this.width = width
-//         this.height = height
-//     }
-
-//     draw(){
-//         image(this.image, this.x, this.y, this.width, this.height)
-//     }
-// }
 
 const game = new Game() // create a game
 
@@ -59,7 +45,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1800, 600)
+    createCanvas(1080, 600)
 }
 
 function draw() {

@@ -1,3 +1,5 @@
+
+
 const words = [
     { english: 'Beer', danish : 'øl'},
     { english: 'Turtle', danish : 'skildpadde'},
@@ -20,6 +22,7 @@ let copiedWords = [...words]
 let randomPair 
 let randomQuestion
 let rightAnswer 
+let wrongAnswer = []
 
 let score = 0;
 
@@ -40,7 +43,9 @@ console.log(rightAnswer)
 function invasion(){
     for (let i=0; i< copiedWords.length; i++){
         let newDiv = document.createElement('div')
-        let newWords = newDiv.innerText = copiedWords[i].danish
+        //let newWords = newDiv.innerText = copiedWords[i].danish
+        let newWords = newDiv.innerHTML = `
+        <img src="/visual/src/viking-ship.png" width="120" height="120"><p>${copiedWords[i].danish}</p>`
         document.querySelector('#words').appendChild(newDiv).classList.add('word')
     }
 }
@@ -54,12 +59,41 @@ const answerTyped = document.getElementById('answer')
 function defeat(){
     const toBeRemoved = document.getElementById('words')
     toBeRemoved.innerHTML = ''
+    answerTyped.value = ''
     const removedWords = copiedWords.filter(function (word){
         return word.danish !== rightAnswer;
       });
     return copiedWords = removedWords
-
 }
+
+function gameOver(){
+    if (wrongAnswer.length >= copiedWords.length -1){
+        // disable user 
+        document.getElementById('answer').disabled = true
+
+        // remove the input field
+        //document.getElementById('answer').remove()
+
+        // change the text
+        let vikingLanded = document.getElementById('question')
+        vikingLanded.innerHTML = `<p>Oops! <br>The vikings have landed!</p>`
+        document.querySelector('#score span').innerText = 0
+        
+        // change the flag
+        let danishFlag = document.createElement('div')
+        danishFlag.innerHTML = `<img id="danish-flag" src="/visual/src/Flag_of_Denmark.png" alt="danish flag">`
+        document.querySelector('#flag').appendChild(danishFlag)
+    }
+}
+
+function victory(){
+
+     let vikingLanded = document.getElementById('question')
+     vikingLanded.innerHTML = `<p>Hurray! <br>You defeated the vikings!</p>`
+     document.querySelector('#score span').innerText = 0
+    
+}
+
 
 document.addEventListener("keydown", function(event){
     if (event.key === 'Enter'){
@@ -67,12 +101,19 @@ document.addEventListener("keydown", function(event){
             score += 3;
             document.querySelector('#score span').innerText = score
             console.log('correct')
-            answerTyped.value = ''
             defeat()
             newQuestion()
-            invasion()
-        } else {
+            invasion() 
+        
+        } else if (answerTyped.value !== rightAnswer){
+            answerTyped.value=''
+            gameOver()
+            wrongAnswer.push(answerTyped.value)
             console.log('wrong')
-        }
+            //newQuestion()
+        }  
     }
 })
+
+
+
