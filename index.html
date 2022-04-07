@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -12,23 +12,25 @@
     <title>Viking invasion</title>
 </head>
 <body>
+    <div id="background">
     <header class="nav">
         <div><p>language:<img id="lang" src="visual/src/Flag_of_Denmark.png" alt="danish flag"></p></div>
         <div id="score">SCORE : <span></span></div>
     </header>   
     <article>
         <section id="system-contatiner">
-            <div id="question">Find the right danish word for <br>< <span></span> > <br>to defeat the vikings!</div>
+            <div id="question">Find the right danish word for <br>>> <span></span> << <br>to defeat the vikings!</div>
         </section>
         <section id="word-container">
             <div id="words"></div>
         </section>
+        <div id="flag">
+            <img id="union-jack" src="visual/src/union jack-1.png.png" alt="union jack">    
+        </div>
         <input type="text" id="answer" placeholder="type your answer here" autofocus="autofocus">
     </article>
-    <div id="flag">
-        <img id="union-jack" src="visual/src/union jack-1.png.png" alt="union jack">    
     </div>
-    <script src="main.js"></script>
+    <script src="/main.js"></script>
    <!--<script src="/background.js"></script>-->
 </body>
 </html>

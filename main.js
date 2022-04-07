@@ -28,11 +28,15 @@ let score = 0;
 
 // a random english word shown in the question section
 function newQuestion(){  
+    if (copiedWords.length > 0){
         randomPair = copiedWords[Math.floor(Math.random() * (copiedWords.length))]
         //console.log('this is the new pair:' , randomPair)
         randomQuestion = randomPair.english
         rightAnswer = randomPair.danish
         return document.querySelector('#question span').innerText = randomQuestion
+    } else if (copiedWords.length <= 0){
+        victory()
+    }
 }
 newQuestion()
 console.log(randomPair)
@@ -45,7 +49,7 @@ function invasion(){
         let newDiv = document.createElement('div')
         //let newWords = newDiv.innerText = copiedWords[i].danish
         let newWords = newDiv.innerHTML = `
-        <img src="visual/src/pixel-viking-ship.png" width="120" height="120"><p>${copiedWords[i].danish}</p>`
+        <img src="visual/src/pixel-viking-ship.png" width="160" height="100"><p>${copiedWords[i].danish}</p>`
         document.querySelector('#words').appendChild(newDiv).classList.add('word')
     }
 }
@@ -76,22 +80,21 @@ function gameOver(){
 
         // change the text
         let vikingLanded = document.getElementById('question')
-        vikingLanded.innerHTML = `<p>Oops! <br>The vikings have landed!</p>`
+        vikingLanded.innerHTML = `<div id="game-over">Oops! <br>The vikings have landed! <br> Run for your life!</div>`
         document.querySelector('#score span').innerText = 0
         
         // change the flag
         let danishFlag = document.createElement('div')
         danishFlag.innerHTML = `<img id="danish-flag" src="visual/src/danish-flag.png" alt="danish flag">`
         document.querySelector('#flag').appendChild(danishFlag)
+
     }
 }
 
 function victory(){
-
      let vikingLanded = document.getElementById('question')
-     vikingLanded.innerHTML = `<p>Hurray! <br>You defeated the vikings!</p>`
-     document.querySelector('#score span').innerText = 0
-    
+     vikingLanded.innerHTML = `<p id="victory">Hurray! <br> You defeated the vikings! <br> God Save The Queen! </p>`
+     //document.querySelector('#score span').innerText = 0   
 }
 
 
@@ -104,6 +107,7 @@ document.addEventListener("keydown", function(event){
             defeat()
             newQuestion()
             invasion() 
+            console.log(copiedWords)
         
         } else if (answerTyped.value !== rightAnswer){
             answerTyped.value=''
@@ -111,9 +115,6 @@ document.addEventListener("keydown", function(event){
             wrongAnswer.push(answerTyped.value)
             console.log('wrong')
             //newQuestion()
-        }  
+        } 
     }
 })
-
-
-
