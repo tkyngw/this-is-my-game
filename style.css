@@ -32,7 +32,7 @@ html {
     border-bottom: solid white 3px;
     font-size: 2em;
     padding-bottom: 10px;
-    margin-top: 100px;
+    margin-top: 80px;
     outline: none;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
@@ -78,14 +78,15 @@ html {
 }
 
 #union-jack {
-    height: 180px;
+    height: 250px;
     position: fixed;
     object-position: left;
 }
 
 #danish-flag{
-    width: 6%;
-    position: fixed;
+   height: 250px;
+   position: fixed;
+   object-position: left;
 }
 
 #lang{

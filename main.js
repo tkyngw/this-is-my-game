@@ -45,7 +45,7 @@ function invasion(){
         let newDiv = document.createElement('div')
         //let newWords = newDiv.innerText = copiedWords[i].danish
         let newWords = newDiv.innerHTML = `
-        <img src="/visual/src/viking-ship.png" width="120" height="120"><p>${copiedWords[i].danish}</p>`
+        <img src="visual/src/pixel-viking-ship.png" width="120" height="120"><p>${copiedWords[i].danish}</p>`
         document.querySelector('#words').appendChild(newDiv).classList.add('word')
     }
 }
@@ -81,7 +81,7 @@ function gameOver(){
         
         // change the flag
         let danishFlag = document.createElement('div')
-        danishFlag.innerHTML = `<img id="danish-flag" src="/visual/src/Flag_of_Denmark.png" alt="danish flag">`
+        danishFlag.innerHTML = `<img id="danish-flag" src="visual/src/danish-flag.png" alt="danish flag">`
         document.querySelector('#flag').appendChild(danishFlag)
     }
 }
