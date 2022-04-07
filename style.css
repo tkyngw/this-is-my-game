@@ -5,11 +5,11 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 1800px;
-    height: 1000px;
-    background-image: url('visual/src/beach-background.gif');
+    width: 1200px;
+    height: 800px;
+    background-image: url('visual/src/small-background-beach.gif');
     background-color: blue;
-    background-size: contain no-repeat;
+    background-size: cover ;
     background-position: center;
     margin: 0;
     padding: 0;
@@ -24,21 +24,22 @@
     align-items: flex-start;
     justify-content: space-between;
     color: white;
-    width: 1450px;
+    width: 1100px;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 15px;
+    font-size: 0.7em;
 }
 
 #answer {
-    width: 500px;
+    width: 350px;
     display: block;
     margin: auto;
     border: none;  
     background: transparent;
-    border-bottom: solid black 5px;
-    font-size: 2em;
+    border-bottom: solid black 3px;
+    font-size: 1em;
     padding-bottom: 10px;
-    margin-top: 120px;
+    margin-top: 40px;
     outline: none;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
@@ -48,14 +49,14 @@
 ::placeholder{
     color: white;
     opacity: 10;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: center;
     font-family: 'Press Start 2P';
 }
 
 #question {
     font-size: 1.6em;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
     line-height: 2.8em;
 }
@@ -67,8 +68,8 @@
 }
 
 #words {
-    width: 1300px;
-    height: 370px;
+    width: 1100px;
+    height: 350px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -76,29 +77,31 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin: auto;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .word {
-    font-size: 1.3em;
+    font-size: 1em;
     color: white;
-    margin: 20px;
+    margin: 10px;
     text-shadow: 2px 2px red;
 }
 
 #union-jack {
-    height: 250px;
+    height: 150px;
     position: absolute;
     object-position: left;
     left: 30px;
-    bottom: 120px
+    bottom: 80px
 }
 
 #danish-flag{
-   height: 250px;
+   height: 150px;
    position: absolute;
    object-position: left;
    left: 30px;
-   bottom: 120px
+   bottom: 80px
 }
 
 #lang{

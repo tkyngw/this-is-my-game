@@ -10,7 +10,10 @@ const words = [
     { english: 'Bread', danish : 'brød'},
     { english: 'Apple', danish : 'æble'},
     { english: 'Child', danish : 'barn'},
-    { english: 'Meal', danish : 'måltid'}
+    { english: 'Meal', danish : 'måltid'},
+    { english: 'Bird', danish: 'fugl'},
+    { english: 'Bed', danish: 'seng'},
+    { english: 'Shoe', danish: 'sko'}
 ]
 
 // copy the original array with JSON stringify
@@ -49,7 +52,7 @@ function invasion(){
         let newDiv = document.createElement('div')
         //let newWords = newDiv.innerText = copiedWords[i].danish
         let newWords = newDiv.innerHTML = `
-        <img src="visual/src/pixel-viking-ship.png" width="160" height="100"><p>${copiedWords[i].danish}</p>`
+        <img src="visual/src/pixel-viking-ship.png" width="130" height="80"><p>${copiedWords[i].danish}</p>`
         document.querySelector('#words').appendChild(newDiv).classList.add('word')
     }
 }
