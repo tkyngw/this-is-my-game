@@ -1,5 +1,11 @@
-# Viking Invasion
-🇩🇰 A fun way to remember Danish vocabulary through a simple game with a viking theme.
+# Viking Invasion 🇩🇰🇬🇧
+
+👾 see the app in action : [Viking Invasion](https://tkyngw.github.io/viking-invasion/)
+
+## 🎯 Objective
+
+- A fun way to train Danish vocabulary through a simple game with a viking theme.
+- This app was developed as the first project of the [Ironhack Web Developement Bootcamp](https://www.ironhack.com/en) in 5 days.
 
 
 
