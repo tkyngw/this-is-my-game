@@ -2,6 +2,12 @@
 🇩🇰 A fun way to remember Danish vocabulary through a simple game with a viking theme.
 
 
+
+## Tech Stacks Used 
+- HTML
+- CSS
+- JavaScript
+
 ## What functions does it have?
     
 - Users can enter the correct English word for a given Danish word
